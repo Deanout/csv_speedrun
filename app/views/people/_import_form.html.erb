@@ -1,0 +1,13 @@
+<%= form_with url: import_people_path, method: :post do |f| %>
+  <div class="container">
+    <div class="d-flex justify-content-end">
+      <%= f.file_field :file, accept: ".csv" %>
+      <div class="btn-group">
+        <%= f.submit "Upload People", class: "btn btn-primary" %>
+        <%= link_to "Clear People", clear_people_path, class: "btn btn-danger",
+        data: { turbo_method: :delete, 
+        turbo_confirm: "Are you sure?" }%>
+      </div>
+    </div>
+  </div>
+<% end %>
